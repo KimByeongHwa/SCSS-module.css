@@ -2,8 +2,12 @@ import classNames from "classnames";
 import React from "react";
 import "./Button.scss";
 
-function Button({ children, size, color, outline, fullWidth }) {
-    return <div className={classNames("Button", size, color, { outline, fullWidth })}>{children}</div>;
+function Button({ children, size, color, outline, fullWidth, ...rest }) {
+    return (
+        <div className={classNames("Button", size, color, { outline, fullWidth })} {...rest}>
+            {children}
+        </div>
+    );
 }
 
 Button.defaultProps = {
